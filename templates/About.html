@@ -4,6 +4,19 @@
 {%block title%}
 Blog About - GHR Control Systems
 {%endblock title%}
+            {%block navigation%}
+            <li class="nav-item ">
+              <a class="nav-link" href="{{url_for('index')}}">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{{url_for('about')}}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
+            </li>
+            {%endblock navigation%}
 
 {%block center%}
     <!-- Page Content -->
