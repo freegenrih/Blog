@@ -5,22 +5,19 @@
 Blog Home - GHR Control Systems
 {%endblock title%}
 
-            {%block navigation%}
-            <li class="nav-item active">
-              <a class="nav-link" href="{{url_for('index')}}">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{url_for('about')}}">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
-            </li>
-            {%endblock navigation%}
-
-
-
+{%block navigation%}
+    <li class="nav-item active">
+        <a class="nav-link" href="{{url_for('index')}}">Home
+            <span class="sr-only">(current)</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{url_for('about')}}">About</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
+    </li>
+{%endblock navigation%}
 
 
 {%block center%}
@@ -31,17 +28,16 @@ Blog Home - GHR Control Systems
 
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-
-          <h1 class="my-4">Page Heading
-            <small>Secondary Text</small>
-          </h1>
+            <div>&nbsp;</div>
 {%block post%}
+            {%if post%}
+            {%for row in post%}
           <!-- Blog Post -->
           <div class="card mb-4">
             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
             <div class="card-body">
-              <h2 class="card-title">Post Title</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+              <h2 class="card-title">{{row.title_post}}</h2>
+              <p class="card-text">{{row.text_post}}</p>
               <a href="#" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
@@ -49,8 +45,10 @@ Blog Home - GHR Control Systems
               <a href="#">GHR Control Systems</a>
             </div>
           </div>
+            {%endfor%}
+            {%endif%}
 {%endblock post%}
-
+            {%if post%}
           <!-- Pagination -->
           <ul class="pagination justify-content-center mb-4">
             <li class="page-item">
@@ -69,7 +67,7 @@ Blog Home - GHR Control Systems
               <a class="page-link" href="#">Newer &rarr;</a>
             </li>
           </ul>
-
+            {%endif%}
         </div>
 
         <!-- Sidebar Widgets Column -->
@@ -88,31 +86,7 @@ Blog Home - GHR Control Systems
             </div>
           </div>
 
-          <!-- Categories Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Categories</h5>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">Arduino</a>
-                    </li>
-                    <li>
-                      <a href="#">ARM</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">Tutorials</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+{%include 'base/base_widget.html'%}
 
           <!-- Side Widget -->
           <div class="card my-4">
