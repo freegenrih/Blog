@@ -34,13 +34,14 @@ Blog Home - GHR Control Systems
             {%for row in post%}
           <!-- Blog Post -->
           <div class="card mb-4">
-            <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+            <img class="card-img-top" src="static/img/1.jpg" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">{{row.title_post}}</h2>
               <p class="card-text">{{row.text_post}}</p>
               <a href="#" class="btn btn-primary">Read More &rarr;</a>
             </div>
-            <div class="card-footer text-muted">
+            <div cl
+ass="card-footer text-muted">
               Posted on January 1, 2017 by
               <a href="#">GHR Control Systems</a>
             </div>
@@ -73,29 +74,13 @@ Blog Home - GHR Control Systems
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
 
-          <!-- Search Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Search</h5>
-            <div class="card-body">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Go!</button>
-                </span>
-              </div>
-            </div>
-          </div>
+            <!-- Search Widget -->
+          {%include 'base/Search_Widget.html'%}
+            <!-- Categories Widget -->
+          {%include 'base/Categories_Widget.html'%}
+            <!-- Side Widget -->
+          {%include 'base/Side_Widget.html'%}
 
-{%include 'base/base_widget.html'%}
-
-          <!-- Side Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Side Widget</h5>
-            <div class="card-body">
-              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-            </div>
-          </div>
-        </div>
       </div>
       <!-- /.row -->
 
